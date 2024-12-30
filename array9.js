@@ -15,7 +15,7 @@
 
 
 rate=80;
-function getRate(rate) {
+function Rate(rate) {
     if (rate < 50) return "Fail";
     if (rate >= 50 && rate <= 59) return "E";
     if (rate >= 60 && rate <= 69) return "D";
@@ -24,5 +24,5 @@ function getRate(rate) {
     if (rate >= 90 && rate <= 100) return "A";
 
 }
-console.log(getRate(90));  
+console.log(Rate(90));  
 

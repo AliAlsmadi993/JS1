@@ -1,4 +1,4 @@
-// 2
+// // 2
 // What the index of "Banana","Tomato"
 // var fruits=["Tomato","Banana","Watermelon"]
 
