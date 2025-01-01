@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="textDiv" onmouseover="changeText('Hello World')" onmouseout="changeText('cane i help you')" style="background-color: yellow; width: 60%; height: 50px; font-size: 30px;">
+    Hello World
+  </div>
+
+  <script>
+    function changeText(newText) {
+      document.getElementById('textDiv').innerText = newText;
+    }
+  </script>
+</body>
+</html>

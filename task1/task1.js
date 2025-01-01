@@ -1,25 +1,25 @@
-// function calculateFactorial(num) {
+function calculateFactorial(num) {
  
     
-//     if (num === 0 || num === 1) {
-//         return 1;
-//     }
-//     let result = 1;
-//     for (let i = 2; i <= num; i++) {
-//         result *= i;
-//     }
-//     return result;
-// }
+    if (num === 0 || num === 1) {
+        return 1;
+    }
+    let result = 1;
+    for (let i = 2; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
 
-// const Input = prompt("Enter a number to calculate its factorial:");
-// const number = parseInt(Input);
+const Input = prompt("Enter a number to calculate its factorial:");
+const number = parseInt(Input);
 
-// if (isNaN(number)) {
-//     console.log("Please enter a valid number.");
-// } else {
-//     const factorial = calculateFactorial(number);
-// document.write(`Factorial of ${number} is ${factorial}`);
-// }
+if (isNaN(number)) {
+    console.log("Please enter a valid number.");
+} else {
+    const factorial = calculateFactorial(number);
+document.write(`Factorial of ${number} is ${factorial}`);
+}
 
 
 

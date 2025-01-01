@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #textArea {
+          width: 100%;
+          height: 100px;
+          border: 1px solid black;
+          padding: 10px;
+        }
+        
+      </style>
+    
+  
+</head>
+
+<body>
+
+
+
+     
+      <div>
+        <select id="fontFamily" onchange="updateTextStyle()">
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="fantasy">fantasy</option>
+        </select>
+    
+        <select id="fontSize" onchange="updateTextStyle()">
+          <option value="10px">10px</option>
+          <option value="14px">14px</option>
+          <option value="18px">18px</option>
+          <option value="24px">24px</option>
+          <option value="30px">30px</option>
+          <option value="35px">35px</option>
+          <option value="40px">40px</option>
+          <option value="50px">50px</option>
+          <option value="55px">55px</option>
+          <option value="60px">60px</option>
+          <option value="65px">65px</option>
+          <option value="70px">70px</option>
+          <option value="80px">80px</option>
+          <option value="90px">90px</option>
+          <option value="100px">100px</option>
+        </select>
+    
+        <label><input type="checkbox" id="italic" onchange="updateTextStyle()"> Italic</label>
+        <label><input type="checkbox" id="bold" onchange="updateTextStyle()"> Bold</label>
+        <label><input type="checkbox" id="underline" onchange="updateTextStyle()"> Underline</label>
+      </div>
+    
+      <div id="textArea" contenteditable="true">
+        the quick brown fox over the lazy dog
+      </div>
+    
+      <script>
+        function updateTextStyle() {
+          const textArea = document.getElementById('textArea');
+    
+          const fontFamily = document.getElementById('fontFamily').value;
+          const fontSize = document.getElementById('fontSize').value;
+          const isItalic = document.getElementById('italic').checked;
+          const isBold = document.getElementById('bold').checked;
+          const isUnderline = document.getElementById('underline').checked;
+    
+          textArea.style.fontFamily = fontFamily;
+          textArea.style.fontSize = fontSize;
+          textArea.style.fontStyle = isItalic ? 'italic' : 'normal';
+          textArea.style.fontWeight = isBold ? 'bold' : 'normal';
+          textArea.style.textDecoration = isUnderline ? 'underline' : 'none';
+        }
+      </script>
+    
+
+</body>
+</html>
