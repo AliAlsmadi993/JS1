@@ -33,7 +33,7 @@ form.addEventListener('submit', function (event) {
             imageSrc
         };
 
-        localStorage.setItem('formData', JSON.stringify(formData));
+        localStorage.setItem('formData', JSON.stringify(formData));   //ـ (json) => JavaScript Object Notation
 
         displayCard.innerHTML = `
             <img src="${imageSrc}" alt="Uploaded Image">

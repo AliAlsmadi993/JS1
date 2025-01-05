@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Form with Separate Card Display</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .card-container {
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .card {
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Your Details</h1>
+        <form id="infoForm">
+            <!-- Form Fields -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="birthdate">Birth Date:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+            <div class="form-group">
+                <label for="siblings">Number of Siblings:</label>
+                <input type="number" id="siblings" name="siblings">
+            </div>
+            <div class="form-group">
+                <label for="siblingsDesc">Description of Siblings:</label>
+                <textarea id="siblingsDesc" name="siblingsDesc" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Your Image:</label>
+                <input type="file" id="image" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" name="occupation" placeholder="e.g., Engineer, Student">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="card-container" id="cardContainer" style="display: none;"></div>
+
+    <script>
+        const form = document.getElementById('infoForm');
+        const cardContainer = document.getElementById('cardContainer');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const birthdate = document.getElementById('birthdate').value;
+            const siblings = document.getElementById('siblings').value;
+            const siblingsDesc = document.getElementById('siblingsDesc').value;
+            const description = document.getElementById('description').value;
+            const occupation = document.getElementById('occupation').value;
+            const fileInput = document.getElementById('image');
+
+            const formData = { name, age, gender, birthdate, siblings, siblingsDesc, description, occupation, imageSrc: null };
+
+            if (fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    formData.imageSrc = e.target.result;
+                    saveAndDisplay(formData);
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                saveAndDisplay(formData);
+            }
+        });
+
+        function saveAndDisplay(data) {
+            localStorage.setItem('name', data.name);
+            localStorage.setItem('age', data.age);
+            localStorage.setItem('gender', data.gender);
+            localStorage.setItem('birthdate', data.birthdate);
+            localStorage.setItem('siblings', data.siblings);
+            localStorage.setItem('siblingsDesc', data.siblingsDesc);
+            localStorage.setItem('description', data.description);
+            localStorage.setItem('occupation', data.occupation);
+            if (data.imageSrc) {
+                localStorage.setItem('imageSrc', data.imageSrc);
+            }
+
+            const cardHTML = `
+                <div class="card">
+                    ${data.imageSrc ? `<img src="${data.imageSrc}" alt="Uploaded Image">` : ''}
+                    <h2>${data.name}</h2>
+                    <p><strong>Age:</strong> ${data.age}</p>
+                    <p><strong>Gender:</strong> ${data.gender}</p>
+                    <p><strong>Birth Date:</strong> ${data.birthdate}</p>
+                    <p><strong>Number of Siblings:</strong> ${data.siblings}</p>
+                    <p><strong>Siblings Description:</strong> ${data.siblingsDesc}</p>
+                    <p><strong>Description:</strong> ${data.description}</p>
+                    <p><strong>Occupation:</strong> ${data.occupation}</p>
+                </div>
+            `;
+
+            cardContainer.innerHTML = cardHTML;
+            cardContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
