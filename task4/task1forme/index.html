@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Card Display</title>
+    <link rel="stylesheet" href="/task1forme/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Display the Form in a Card</h1>
+        <form id="infoForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender" required>
+            </div>
+            <div class="form-group">
+                <label for="birthdate">Birth Date:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Your Image:</label>
+                <input type="file" id="image" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="major">Major & University:</label>
+                <input type="text" id="major" name="major">
+            </div>
+            <div class="form-group">
+                <label>Programming Language:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="HTML"> HTML</label>
+                    <label><input type="checkbox" value="CSS"> CSS</label>
+                    <label><input type="checkbox" value="JavaScript"> JavaScript</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="siblings">Siblings Number:</label>
+                <input type="number" id="siblings" name="siblings">
+            </div>
+            <div class="form-group">
+                <label for="siblingsDesc">Description of Siblings:</label>
+                <textarea id="siblingsDesc" name="siblingsDesc" rows="2"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="displayCard" class="card" style="display: none;"></div>
+    </div>
+
+    <script src="/task1forme/script.js"></script>
+</body>
+</html>

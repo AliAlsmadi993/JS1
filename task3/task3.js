@@ -86,9 +86,8 @@ function double('7') {
 //     return 2 * x;
 // }
 
-// double1(7);
-// double2(7);
-// double3(7);
+//  console.log (double1(7));
+
 
 
 // p7 *************************************************
