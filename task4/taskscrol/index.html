@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Website</title>
+    <link rel="stylesheet" href="/taskscrol/stylee.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+
+#scrollToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: #0f520a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#scrollToTop:hover {
+    background-color: #0056b3;
+}
+
+</style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">FIN</div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#" style="color: #336e65;">Contact Us</a></li>
+               <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+               <i class="fa-solid fa-cart-shopping" style="color: #fcfcfc;"></i>            </ul>
+           
+        </nav>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>"Transform your <br> space with elegance."</h1>
+                <div class="hero-buttons">
+                    <a href="#" class="btn shop-now">Shop Now</a>
+                    <a href="#" class="btn explore">Explore</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="yellow"></div>
+                <img src="img/header.webp" alt=" Sofa">
+            </div>
+        </div>
+    </header>
+    <button id="scrollToTop" title="Go to top">↑</button>
+    <script>const scrollToTopButton = document.getElementById("scrollToTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopButton.style.display = "block";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        };
+        
+        scrollToTopButton.onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+        </script>
+
+    <section class="products-section">
+        <div class="products-info">
+            <h2>Crafted with excellent material.</h2>
+            <p>
+                Done mattis porta eros, aliquet finibus risus interdum at. Nulla
+vivethe as it was for us to know what was to be done.
+            </p>
+            <a href="#" class="btn explore-btn">Explore</a>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/2.png" alt="Modern Chair">
+                    <div class="hover-dot"></div>
+                </div>
+                <h4>Modern Chair</h4>
+                <p>$60.00</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/3.png" alt="Kruzo Aero Chair">
+                    <div class="hover-dot"></div>
+                </div>
+                <h4>Kruzo Aero Chair</h4>
+                <p>$78.00</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/4.png" alt="Ergonomic Chair">
+                    <div class="hover-dot"></div>
+                </div>
+                <h4>Ergonomic Chair</h4>
+                <p>$88.00</p>
+            </div>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <div class="why-choose-text">
+            <h2>Why Choose Us</h2>
+            <p class="section-description">
+                Donec mattis porta eros, aliquet finibus risus interdum at. Nulla vulputate elit at erat feugiat, vel malesuada ex vestibulum.
+            </p>
+            <div class="choose-items">
+                <div class="choose-column">
+                    <div class="choose-item">
+                        <div class="choose-icon">🚚</div>
+                        <div class="choose-content">
+                            <h4>aFst & Free Shipping</h4>
+                            <p>Donec mattis porta eros, aliquet finibus risus interdum at. Nulla vivethe as it was</p>
+                        </div>
+                    </div>
+                    <div class="choose-item">
+                        <div class="choose-icon">📞</div>
+                        <div class="choose-content">
+                            <h4>24/7 Suppor</h4>
+                            <p>Donec mattis porta eros, aliquet finibus risus interdum at. Nulla vivethe as it was</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="choose-column">
+                    <div class="choose-item">
+                        <div class="choose-icon">🛒</div>
+                        <div class="choose-content">
+                            <h4>Easy to Shop</h4>
+                            <p>Donec mattis porta eros, aliquet finibus risus interdum at. Nulla vivethe as it was</p>
+                        </div>
+                        
+                    </div>
+                    <div class="choose-item">
+                        <div class="choose-icon">🔄</div>
+                        <div class="choose-content">
+                            <h4>Hassle Free Returns</h4>
+                            <p>Donec mattis porta eros, aliquet finibus risus interdum at. Nulla vivethe as it was</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="why-choose-image">
+            <div class="yellow1"></div>
+            <img src="/img/5.jpg" alt="Why Choose Us Image">
+        </div>
+    </section>
+    <section class="interior-design-section">
+        <div class="images-container">
+            <div class="dot9"></div>
+            <div class="image-large">
+                <img src="/img/7.jpg" >
+            </div>
+            <div >
+<img class="img11" src="/img/8.jpg">
+
+            </div>
+            <div><img class="img10" src="/img/6.jpg"></div>
+        </div>
+        </div>
+        <div class="content-container">
+            <h2>We help you make <br> Modern Interior Design</h2>
+            <p class="description">
+                Donec mattis porta eros, aliquet finibus risus interdum at. Nulla vivethe as it was for us to know what was to be done.
+            </p>
+            <div class="bullet-points">
+                <ul>
+                    <li>Donec mattis porta eros, let aliquet finibus ri</li>
+                    <li>Donec mattis porta eros, let aliquet finibus ri</li>
+                </ul>
+                <ul>
+                    <li>Donec mattis porta eros, let aliquet finibus ri</li>
+                    <li>Donec mattis porta eros, let aliquet finibus ri</li>
+                </ul>
+            </div>
+            <a href="#" class="btn-explore">Explore</a>
+        </div>
+    </section>
+    <section class="products-section">
+        <div class="cards-container">
+    
+            <div class="card">
+                <div class="image-wrapper">
+                    <div class="card-image">
+                        <img src="/img/2.png" alt="Modern Chair">
+                    </div>
+                </div>
+                <div class="card-text">
+                    <h4>Modern Chair</h4>
+                    <p>Donec mattis porta eros, aliquet finibus risus in.</p>
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div class="image-wrapper">
+                    <div class="card-image">
+                        <img src="/img/3.png" alt="Kruzi Aero">
+                    </div>
+                </div>
+                <div class="card-text">
+                    <h4>Kruzi Aero</h4>
+                    <p>Donec mattis porta eros, aliquet finibus risus in.</p>
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div class="image-wrapper">
+                    <div class="card-image">
+                        <img src="/img/4.png" alt="Ergonomic Chair">
+                    </div>
+                </div>
+                <div class="card-text">
+                    <h4>Ergonomic Chair</h4>
+                    <p>Donec mattis porta eros, aliquet finibus risus in.</p>
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+    
+        </div>
+
+    </section>
+
+<section class="testimonials-section">
+    <h2>Testimonials</h2>
+    <div class="testimonial-content">
+        <button class="arrow left-arrow">&lt;</button>
+        <p class="testimonial-text">
+            “Donec nibh magna, interdum quis massa sed, rhoncus laoreet quam. Mauris accumsan felis fermentum euismod egestas. Mauris ante augue, cursus sit amet arcu a, maximus suscipit nibh. Integer vel nibh tellus. Pellentesque in risus non dui venenatis sollicitudin sed vitae diam. Fusce tincidunt nisl mi, at molestie odio accumsan non.”
+        </p>
+        <button class="arrow right-arrow">&gt;</button>
+    </div>
+</section>
+<section class="testimonial-section">
+    <div class="testimonial-container">
+        <div class="testimonial-image">
+            <img src="/img/man.jpg" alt="PersonImage">
+        </div>
+
+        <div class="testimonial-name">
+            <h3>John Doe</h3> 
+        </div>
+
+        <div class="testimonial-description">
+            <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            </p>
+        </div>
+
+        <div class="testimonial-pagination">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</section>
+<section class="recently-blog">
+    <div class="blog-header">
+        <h2>Recently Blog</h2>
+        <a href="#" class="view-all">View All Posts</a>
+    </div>
+    <div class="blog-cards">
+        <div class="blog-card">
+            <img src="/img/11.jpg" alt="Blog Image 1">
+            <h3>First Time Home Owner Ideas</h3>
+            <p>by Nana Ama on Nov 18th, 2022</p>
+        </div>
+        <div class="blog-card">
+            <img src="/img/22.jpg" alt="Blog Image 2">
+            <h3>First Time Home Owner Ideas</h3>
+            <p>by Nana Ama on Nov 18th, 2022</p>
+        </div>
+        <div class="blog-card">
+            <img src="/img/33.jpg" alt="Blog Image 3">
+            <h3>First Time Home Owner Ideas</h3>
+            <p>by Nana Ama on Nov 18th, 2022</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-icon">
+                <span>📧</span> Subscribe to Newsletter
+            </div>
+            <form class="newsletter-form">
+                <input type="text" placeholder="Enter your name">
+                <input type="email" placeholder="Enter your e-mail">
+                <button type="submit"><span>✈️</span></button>
+            </form>
+        </div>
+        <div class="newsletter-image">
+            <img src="/img/end.png" alt="Chair">
+        </div>
+    </div>
+    <br>
+
+    <div class="footer-main">
+        <div class="footer-logo">
+            <h2 style="margin-top: -40px;">FIN</h2>
+            
+            <p style="font-size: 0.8rem;">
+                Donec mattis porta eros, aliquet finibus risus interdum at. Nulla vivethe as it was for us to know what was to be done. the this is a long  post for the text.`This small text has to be place here, since this is             </p>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li>About us</li>
+                <li>Services</li>
+                <li>Blog</li>
+                <li>Contact us</li>
+            </ul>
+            <ul>
+                <li>Support</li>
+                <li>Knowledge base</li>
+                <li>Live chat</li>
+            </ul>
+            <ul>
+                <li>Jobs</li>
+                <li>Our team</li>
+                <li>Leadership</li>
+                <li>Privacy Policy</li>
+            </ul>
+            <ul>
+                <li>Nordic Chair</li>
+                <li>Kruzo Aero</li>
+                <li>Ergonomic</li>
+            </ul>
+        </div>
+    </div>
+    
+<section>
+    <div class="social-icons" style="float: left; display: flex;gap: 20px;">
+        <i class="fa-brands fa-facebook-f" style="color: #0b0101;"></i>       
+        <i class="fa-brands fa-instagram"></i>    
+        <i class="fa-solid fa-x"></i>
+        <i class="fa-brands fa-linkedin-in"></i>    </div>
+  
+    <p class="pp1" style="float: right;">Terms & Conditions | Privacy Policy</p>
+</section>
+<br><br>
+    <div class="footer-bottom">
+        
+        <p>Copyright © 2022 zainal00769@gmail.com. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

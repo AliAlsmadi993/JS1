@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>className vs classList</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .box-one {
+            background-color: #ff4d4f;
+        }
+
+        .box-two {
+            background-color: #1890ff;
+        }
+
+        .rounded {
+            border-radius: 50%;
+        }
+
+        .highlight {
+            border: 5px solid #ffc107;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .className-btn {
+            background: #52c41a;
+            color: white;
+        }
+
+        .classList-btn {
+            background: #fadb14;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>className vs classList</h1>
+        <div class="boxes">
+            <div id="boxOne" class="box box-one">Box 1</div>
+            <div id="boxTwo" class="box box-two">Box 2</div>
+        </div>
+        <button id="classNameBtn" class="className-btn">Change Box 1 (className)</button>
+        <button id="classListBtn" class="classList-btn">Toggle Box 2 (classList)</button>
+    </div>
+
+    <script>
+        const boxOne = document.getElementById('boxOne');
+        const boxTwo = document.getElementById('boxTwo');
+        const classNameBtn = document.getElementById('classNameBtn');
+        const classListBtn = document.getElementById('classListBtn');
+
+        // className example: Replace all classes for Box 1
+        classNameBtn.addEventListener('click', () => {
+            if (boxOne.className === 'box box-one') {
+                boxOne.className = 'box highlight'; // Replace all classes
+                boxOne.textContent = 'Highlighted';
+            } else {
+                boxOne.className = 'box box-one'; // Reset classes
+                boxOne.textContent = 'Box 1';
+            }
+        });
+
+        // classList example: Toggle specific class for Box 2
+        classListBtn.addEventListener('click', () => {
+            boxTwo.classList.toggle('rounded'); // Add/Remove rounded class
+            boxTwo.classList.toggle('highlight'); // Add/Remove highlight class
+            boxTwo.textContent = boxTwo.classList.contains('rounded') ? 'Rounded' : 'Box 2';
+        });
+    </script>
+</body>
+</html>
