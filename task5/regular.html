@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme Form</title>
+    <link rel="stylesheet" href="/regular.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="validationForm">
+            <label for="fname">Enter a Fname:</label>
+            <input type="text" id="fname" placeholder="First name">
+            <span id="fnameError" class="error"></span>
+
+            <label for="bdate">Enter a Bdate:</label>
+            <input type="text" id="bdate" placeholder="dd/mm/yyyy">
+            <span id="bdateError" class="error"></span>
+
+            <label for="email">Enter an email:</label>
+            <input type="email" id="email" placeholder="Email">
+            <span id="emailError" class="error"></span>
+
+            <label for="confirmEmail">Confirm Email:</label>
+            <input type="email" id="confirmEmail" placeholder="Confirm Email">
+            <span id="confirmEmailError" class="error"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password">
+            <span id="passwordStrengthError" class="error"></span>
+
+            <label for="confirmPassword">Confirm password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <span id="passwordError" class="error"></span>
+        </form>
+    </div>
+    <script src="/regular.js"></script>
+</body>
+</html>
